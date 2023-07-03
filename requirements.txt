@@ -1,3 +1,4 @@
 Django
 python-docx
 pyxl
+pdfminer
