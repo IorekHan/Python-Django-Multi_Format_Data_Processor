@@ -1,4 +1,6 @@
 # Python-Django-Multi_Format_Data_Processor
+### This project is running with Django web server.
+### Now you can use this to parse .pdf to .txt or .doc
 
 ## Requirements
 1. Please use ```pip install Django``` in cmd to install Django framework.
