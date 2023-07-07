@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+{% block content_block %}
+
+<br>
+<div style="background-color: #f2f2f2; padding: 20px; margin: 0 50px;">
+  <h2>PDF Parser</h2>
+<br>
+  <p>Hello! {{ name }}, welcome. </p>
+  <p>This system can help you to parse PDF files.</p>
+</div>
+<br>
+<hr style="color: gray;">
+<br>
+
+
+<body>
+<div style="background-color: black; color: white; padding: 20px; margin: 0 50px;">
+  <h4>Upload files here:</h4>
+</div>
+<br>
+<form method="POST" enctype="multipart/form-data" style="margin-left: 50px;">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Upload</button>
+</form>
+
+    <br>
+
+    <hr style="color: gray;">
+	
+
+
+    {% if files %}
+        <div style="background-color: black; color: white; padding: 20px; margin: 0 50px;">
+  	<h4>Uploaded files:</h4>
+	<p>Click the url to download it, click delete to delete it.</p>
+	</div>
+
+            {% for file in files %}
+		<br>
+                <div style="background-color: #f2f2f2; padding: 5px; margin: 0 50px; ">
+ 		    <p>{{ file }}</p>
+                    <a href="/pdf_reader/home/download/{{file}}">Download</a>
+		&nbsp&nbsp
+                    <a href="/pdf_reader/home/delete/{{file}}" >Delete</a>
+		</div>
+
+		
+            {% endfor %}
+
+    <hr style="color: gray;">
+    <div style="background-color: black; color: white; padding: 20px; margin: 0 50px;">
+      <h4>Convert all uploaded PDF to:</h4>
+        <br>
+            <form>
+              <button type="submit" style="background-color: white; color: black; padding: 5px; " formaction="/pdf_reader/home/runtxt">&nbsp;&nbsp;text file: .txt&nbsp;&nbsp;</button>
+            </form>	
+            <form>
+              <button type="submit" style="background-color: white; color: black; padding: 5px; " formaction="/pdf_reader/home/runword">&nbsp;&nbsp;word file: .doc&nbsp;&nbsp;</button>
+            </form>	
+    </div>
+
+    
+    {% endif %}
+
+
+
+</body>
+<hr style="color: gray;">
+<nav style="background-color: black; color: white; padding: 10px;">
+  <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;">
+    <li style="margin-bottom: 10px;"><a href="/pdf_reader/home/logout" style="color: white; text-decoration: none;">Log out</a></li>
+  </ul>
+</nav>
+
+
+{% endblock %}

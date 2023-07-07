@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content_block %}
+
+<br>
+<br>
+
+<div style="background-color: #f2f2f2; padding: 20px; margin: 0 50px;">
+  <h2>Welcome to multi format parser!</h2>
+<br>
+  <p>This is the login page for PDF parsing.</p>
+</div>
+
+<br>
+
+<hr style="color: gray;">
+
+<br>
+
+<div style="text-align: center;">
+  <form action="{{ request.get_full_path }}" method="post" style="display: inline-block; background-color: #f2f2f2; color: black; padding: 20px;">
+
+    {% csrf_token %}    
+
+    <label for="username">Username:&nbsp;&nbsp;</label>
+    <input type="text" id="username" name="user"><br><br>
+    <label for="password">Password:&nbsp;&nbsp;</label>
+    <input type="password" id="password" name="pwd"><br><br>
+    <button type="submit" style="background-color: black; color: white; padding: 5px; ">&nbsp;&nbsp;Login&nbsp;&nbsp;</button>
+  </form>
+</div>
+
+
+{% endblock %}
