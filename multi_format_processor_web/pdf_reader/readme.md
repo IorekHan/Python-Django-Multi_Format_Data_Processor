@@ -1,1 +1,0 @@
-PDF parsing app dir.
