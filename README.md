@@ -19,7 +19,7 @@
 * Use browser to open 127.0.0.1:8000
 * To manipulate user database, please go to ```127.0.0.1:8000/admin``` with superuser account.
 
-## Accounts
+## Authentication
 * I've added a superuser:
   ```
   username: admin
@@ -30,3 +30,4 @@
   username: admin
   password: 12345678
   ```
+* No session or token authentication for other apps.
