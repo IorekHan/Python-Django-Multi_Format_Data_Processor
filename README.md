@@ -7,6 +7,15 @@
 ## Requirements
 1. Please use ```pip install Django``` in cmd to install Django framework.
 2. Please use pip install to install all libs in the requirements.txt.
+3. If encountered migrations/migrate related problem, please use following lines in cmd under root dir to repair
+   ```cmd
+   python manage.py makemigrations
+   python manage.pt migrate
+   ```
+4. To start Django server, please use followling line in cmd under root dir of the Django project:
+   ```cmd
+   python manage.py runserver
+   ```
 
 ## How to run
 * Open cmd and cd to the root dir of the Django project, run ```cmd python manage.py runserver``` to start the server at local. 
@@ -15,10 +24,12 @@
 
 ## Accounts
 * I've added a superuser:
-  ``` username: admin
+  ```
+  username: admin
   password: 12345678
   ```
 * For pdf_reader, I created an account:
-  ```username: admin
+  ```
+  username: admin
   password: 12345678
   ```
