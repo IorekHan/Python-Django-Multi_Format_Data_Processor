@@ -15,7 +15,7 @@
 
 
 ## How to run
-* Open cmd and cd to the root dir of the Django project, run ``` python manage.py runserver``` to start the server at local. 
+* Open cmd and cd to the root dir of the Django project, run ```python manage.py runserver``` to start the server at local. 
 * Use browser to open 127.0.0.1:8000
 * To manipulate user database, please go to ```127.0.0.1:8000/admin``` with superuser account.
 
